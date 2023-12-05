@@ -1,9 +1,8 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar elevation-4" style="background-color: 	#F0FFFF;">
     <!-- Brand Logo -->
-    <a href="/dashboard" class="brand-link">
-      <img src="/admin/img/Posicare.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">POSICARE</span>
+    <a href="/dashboard" class="brand-link d-flex ">
+      <img src="/admin/img/Posicare.png" alt="LOGO" height="100">
     </a>
 
     <!-- Sidebar -->
@@ -11,7 +10,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="/admin/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="/admin/img/Profil.png" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">{{ auth()->user()->name }}</a>
@@ -38,7 +37,7 @@
             <a href="#" class="nav-link {{ Request::is('dashboard/ortus*') || Request::is('dashboard/anaks*') || Request::is('dashboard/jenis_imunisasis*') ? 'active' : '' }}">
               <i class="nav-icon fas fa-database"></i>
               <p>
-                Data Master
+                Kelola Data
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -64,19 +63,7 @@
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Data kader</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>PKK</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>UKM</p>
+                  <p>Data Bidan</p>
                 </a>
               </li>
             </ul>
@@ -93,18 +80,10 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-balance-scale"></i>
               <p>
-                Hasil Timbang
+                Status Gizi
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Top Navigation</p>
-                </a>
-              </li>
-            </ul>
           </li>
           <li class="nav-item">
             <a href="/dashboard/imunisasis" class="nav-link {{ Request::is('dashboard/imunisasis*') ? 'active' : '' }}">
@@ -118,7 +97,7 @@
             <a href="/dashboard/vitamin_as" class="nav-link {{ Request::is('dashboard/vitamin_as*') ? 'active' : '' }}">
               <i class="nav-icon fas fa-capsules"></i>
               <p>
-                Stunting
+                Vitamin
               </p>
             </a>
           </li>

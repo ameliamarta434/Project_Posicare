@@ -19,6 +19,9 @@
     <title>Posicare</title>
 
     <style>
+      section{
+        margin-top: 4rem;
+      }
       .carousel-caption {
         position: absolute;
         top: 50%;
@@ -54,65 +57,41 @@
         font-size: 24px; /* Ukuran font yang sesuai */
         /* Tambahan gaya teks lainnya jika diperlukan */
       }
-      .button-container {
-        display: flex;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) translateY(55px);;
-      }
-
-      .button-wrapper {
-        margin-right: 35px;
-      }
-      .button-container .btn-custom {
-              font-size: 18px; /* Mengurangi ukuran font tombol */
-              padding: 12px 22px; /* Mengurangi padding tombol */
-              margin-right: 35px; /* Memberikan jarak kanan pada tombol pertama */
-      }
-      .carousel-item img {
-        width: 100%;
-        height: auto;
-      }
-      .carousel-inner {
-        width: 200%;
-        max-width: 135%;
-        margin-right: -24%; /* Menyesuaikan posisi carousel ke kanan */
-        transform: translateX(-14%); /* Menggeser gambar ke kiri */
-      }
-
   </style>
   </head>
   <body>
 
+
     <!-- Jumbotron -->
-    
     <div id="carouselExample" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="admin/img/bg cr.png" class="d-block w-100 " alt="...">
-          <div class="carousel-caption d-none d-md-block container-fluid"> <!-- Tambahkan kelas text-left -->
-            <h1 style="color: rgb(252, 252, 252);">Posicare (Posyandu iCare)</h1>
-            <h2 style="color: rgb(253, 250, 250); font-weight: normal;">Untuk pengelolaan posyandu yang lebih efektif dan efisien serta bertujuan untuk meningkatkan efektivitas pemantauan kesehatan, pencatatan data, dan 
-              pengelolaan informasi terkait dengan pertumbuhan anak-anak dan kesehatan ibu hamil melalui pemanfaatan teknologi.</h2>
-              <div class="button-container ">
-                <div class="button-wrapper">
-                  <form action="halaman_pendaftaran.html">
-                    <button type="submit" class="btn btn-primary btn-custom">Daftar</button>
-                  </form>
-                </div>
-                <div class="button-wrapper">
-                  <form action="halaman_login.html">
-                  <button onclick="window.location.href='/login'" class="btn btn-primary btn-custom {{ ($active === 'login' ? 'active' : '') }}">Login</button>
-                  </form>
-                </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="admin/img/bg cr.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block container-fluid text-center"> <!-- Menggunakan kelas text-center -->
+        <div class="row align-items-center d-flex justify-content-star h-100"> <!-- Membuat row untuk mengatur posisi vertikal -->
+          <div class="col-md-8">
+            <h1 style="color: rgb(252, 252, 252); margin-bottom: 15px;">Posicare (Posyandu iCare)</h1>
+            <h2 style="color: rgb(253, 250, 250); font-weight: normal; margin-bottom: 30px;">Untuk pengelolaan posyandu yang lebih efektif dan efisien serta bertujuan untuk meningkatkan efektivitas pemantauan kesehatan, pencatatan data, dan pengelolaan informasi terkait dengan pertumbuhan anak-anak dan kesehatan ibu hamil melalui pemanfaatan teknologi.</h2>
+            <div class="row d-flex justify-content-center">
+              <div class="col-xl-1">
+                <form action="/register"> <!-- Ubah action ke "/register" -->
+                  <button type="submit" class="btn btn-primary btn-custom ps-3 pe-3 pt-1 pb-1">Daftar</button>
+                </form>
               </div>
-              
-              
+              <div class="col-xl-1">
+                  <form action="/login"> <!-- Ubah action ke "/login" -->
+                    <button type="submit" class="btn btn-primary btn-custom ps-3 pe-3 pt-1 pb-1 {{ ($active === 'login' ? 'active' : '') }}"> Login
+                    </button>
+                  </form>
+              </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>    
+    </div>
+  </div>
+</div>
     <!-- akhir Jumbotron -->
 
 
@@ -120,9 +99,10 @@
     <div class="container">
 
       <!-- info panel -->
-      <div class="row justify-content-center">
-        <div class="col-5 info-panel">
-          <div class="row">
+      <div class="row justify-content-center" style="margin-top: -20px;">
+  <div class="col-5 info-panel" style="margin-top: -90px; background-color: #fff; border: 1px solid #ccc; padding: 15px; border-radius: 10px;">
+    <div class="row">
+
             <div class="col-sm text-center">
               <a href="link_ke_halaman_imunisasi_anak">
                 <img src="admin/img/logo anak.png" alt="Employee" class="img-fluid float-left">
@@ -142,27 +122,29 @@
 
 
       <!-- Workingspace -->
-      <div class="row workingspace">
-        <div class="col-lg-6">
-          <img src="admin/img/bayi .jpg" alt="Working Space" class="img-fluid" style="border-radius: 30px;">
-        </div>
-        <div class="col-lg-5">
-          <h2>Hindari <span>Stunting</span> Pada <span>Anak</span></h2>
-          <p>Stunting berpotensi memperlambat perkembangan otak, dengan dampak jangka panjang berupa keterbelakangan mental, rendahnya kemampuan belajar, dan risiko serangan penyakit kronis seperti diabetes, hipertensi, hingga obesitas</p>
-          <a href="halaman_lengkap.html" class="btn btn-danger tombol" style="background-color: #54B4D3; border-color: #54B4D3;">Lengkapnya</a>
+      <div class="row workingspace " style="margin-top: 100px;">
+  <div class="col-lg-6">
+    <img src="admin/img/bayi .jpg" alt="Working Space" class="img-fluid" style="border-radius: 30px;">
+  </div>
+  <div class="col-lg-5">
+    <h2>Hindari <span>Stunting</span> Pada <span>Anak</span></h2>
+    <p>Stunting berpotensi memperlambat perkembangan otak, dengan dampak jangka panjang berupa keterbelakangan mental, rendahnya kemampuan belajar, dan risiko serangan penyakit kronis seperti diabetes, hipertensi, hingga obesitas</p>
+    <a href="halaman_lengkap.html" class="btn btn-danger tombol" style="background-color: #54B4D3; border-color: #54B4D3;">Lengkapnya</a>
+  </div>
+</div>
 
-        </div>
-      </div>
       <!-- akhir Workingspace -->
 
 
       <!-- Testimonial -->
-      <section class="testimonial">
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <p>"Setiap langkah kecil yang kita ambil untuk mendukung kesehatan anak-anak dan ibu hamil adalah investasi besar bagi kesejahteraan masa depan kita."</p>
+      <section>
+        <div class="container mt-5">
+          <div class="row d-flex justify-content-center ">
+            <div class="col">
+              <h1 class="fst-italic text-center"> "Setiap langkah kecil yang kita ambil untuk mendukung kesehatan anak-anak dan ibu hamil adalah investasi besar bagi kesejahteraan masa depan kita."
+              </h1>
+            </div>
           </div>
-        </div>
         </div>
       </section>
       <!-- akhir Testimonial -->
