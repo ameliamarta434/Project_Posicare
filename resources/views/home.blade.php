@@ -9,7 +9,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -19,12 +19,13 @@
     <title>Posicare</title>
 
     <style>
+    
       section{
         margin-top: 4rem;
       }
       .carousel-caption {
         position: absolute;
-        top: 50%;
+        top: 43%;
         transform: translateY(-50%);
         text-align: center;
         color: #fff; /* Warna teks */
@@ -40,23 +41,24 @@
 
       .carousel-caption a.btn {
         /* Gaya untuk tombol */
-        margin-top: 20px; /* Spasi antara teks dan tombol */
+        margin-top: 30px; /* Spasi antara teks dan tombol */
       }
       .transparent-img {
         opacity: 0.7; /* Ubah angka sesuai tingkat transparansi yang diinginkan (0 - 1) */
       }
       .btn-custom {
       /* Menyesuaikan warna latar dan teks pada tombol */
-      background-color: #54B4D3; 
-      border-color: #54B4D3;
+      background-color: #145DA0; 
+      border-color: #145DA0;
       }
       .icon-white {
         color: white; /* Mengubah warna ikon menjadi putih */
       }
       h2 {
-        font-size: 24px; /* Ukuran font yang sesuai */
+        font-size: 30px; /* Ukuran font yang sesuai */
         /* Tambahan gaya teks lainnya jika diperlukan */
       }
+      
   </style>
   </head>
   <body>
@@ -70,15 +72,15 @@
       <div class="carousel-caption d-none d-md-block container-fluid text-center"> <!-- Menggunakan kelas text-center -->
         <div class="row align-items-center d-flex justify-content-star h-100"> <!-- Membuat row untuk mengatur posisi vertikal -->
           <div class="col-md-8">
-            <h1 style="color: rgb(252, 252, 252); margin-bottom: 15px;">Posicare (Posyandu iCare)</h1>
-            <h2 style="color: rgb(253, 250, 250); font-weight: normal; margin-bottom: 30px;">Untuk pengelolaan posyandu yang lebih efektif dan efisien serta bertujuan untuk meningkatkan efektivitas pemantauan kesehatan, pencatatan data, dan pengelolaan informasi terkait dengan pertumbuhan anak-anak dan kesehatan ibu hamil melalui pemanfaatan teknologi.</h2>
+            <h1 style="color: rgb(252, 252, 252); margin-bottom: 25px;">Posicare (Posyandu iCare)</h1>
+            <h2 style="color: rgb(253, 250, 250); font-weight: normal; margin-bottom: 30px;">Untuk pengelolaan posyandu yang lebih efektif dan efisien serta bertujuan untuk meningkatkan efektivitas pemantauan kesehatan, pencatatan data, dan pengelolaan informasi terkait dengan pertumbuhan anak-anak dan kesehatan ibu hamil melalui pemanfaatan teknologi</h2>
             <div class="row d-flex justify-content-center">
               <div class="col-xl-1">
                 <form action="/register"> <!-- Ubah action ke "/register" -->
                   <button type="submit" class="btn btn-primary btn-custom ps-3 pe-3 pt-1 pb-1">Daftar</button>
                 </form>
               </div>
-              <div class="col-xl-1">
+              <div class="col-xl-2">
                   <form action="/login"> <!-- Ubah action ke "/login" -->
                     <button type="submit" class="btn btn-primary btn-custom ps-3 pe-3 pt-1 pb-1 {{ ($active === 'login' ? 'active' : '') }}"> Login
                     </button>
@@ -99,9 +101,9 @@
     <div class="container">
 
       <!-- info panel -->
-      <div class="row justify-content-center" style="margin-top: -20px;">
-  <div class="col-5 info-panel" style="margin-top: -90px; background-color: #fff; border: 1px solid #ccc; padding: 15px; border-radius: 10px;">
-    <div class="row">
+      <div class="row justify-content-center mt-5" >
+      <div class="col-5 info-panel" style="margin-top: -90px; background-color: #fff; border: 1px solid #ccc; padding: 15px; border-radius: 10px;">
+        <div class="row">
 
             <div class="col-sm text-center">
               <a href="link_ke_halaman_imunisasi_anak">
@@ -123,15 +125,15 @@
 
       <!-- Workingspace -->
       <div class="row workingspace " style="margin-top: 100px;">
-  <div class="col-lg-6">
-    <img src="admin/img/bayi .jpg" alt="Working Space" class="img-fluid" style="border-radius: 30px;">
-  </div>
-  <div class="col-lg-5">
-    <h2>Hindari <span>Stunting</span> Pada <span>Anak</span></h2>
-    <p>Stunting berpotensi memperlambat perkembangan otak, dengan dampak jangka panjang berupa keterbelakangan mental, rendahnya kemampuan belajar, dan risiko serangan penyakit kronis seperti diabetes, hipertensi, hingga obesitas</p>
-    <a href="halaman_lengkap.html" class="btn btn-danger tombol" style="background-color: #54B4D3; border-color: #54B4D3;">Lengkapnya</a>
-  </div>
-</div>
+      <div class="col-lg-6">
+        <img src="admin/img/bayi .jpg" alt="Working Space" class="img-fluid" style="border-radius: 30px;">
+      </div>
+      <div class="col-lg-5" >
+        <h2 style="font-size: 48px;" class="fw-bold" >HINDARI <span class="fw-lighter">STUNTING</span> PADA <span class="fw-bold">ANAK</span></h2>
+        <p style="font-size: 18px;">Stunting berpotensi memperlambat perkembangan otak, dengan dampak jangka panjang berupa keterbelakangan mental, rendahnya kemampuan belajar, dan risiko serangan penyakit kronis seperti diabetes, hipertensi, hingga obesitas</p>
+        <a href="halaman_lengkap.html" class="btn btn-danger tombol" style="background-color: #54B4D3; border-color: #54B4D3;">Lengkapnya</a>
+      </div>
+    </div>
 
       <!-- akhir Workingspace -->
 
