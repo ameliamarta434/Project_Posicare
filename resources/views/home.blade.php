@@ -54,8 +54,11 @@
       .icon-white {
         color: white; /* Mengubah warna ikon menjadi putih */
       }
+      h1{
+        font-size: 60px;
+      }
       h2 {
-        font-size: 30px; /* Ukuran font yang sesuai */
+        font-size: 20px; /* Ukuran font yang sesuai */
         /* Tambahan gaya teks lainnya jika diperlukan */
       }
       
@@ -72,7 +75,7 @@
       <div class="carousel-caption d-none d-md-block container-fluid text-center"> <!-- Menggunakan kelas text-center -->
         <div class="row align-items-center d-flex justify-content-star h-100"> <!-- Membuat row untuk mengatur posisi vertikal -->
           <div class="col-md-8">
-            <h1 style="color: rgb(252, 252, 252); margin-bottom: 25px;">Posicare (Posyandu iCare)</h1>
+            <h1 style="color: rgb(252, 252, 252); margin-bottom: 25px;"><b>POSICARE</b> Posyandu I-Care</h1>
             <h2 style="color: rgb(253, 250, 250); font-weight: normal; margin-bottom: 30px;">Untuk pengelolaan posyandu yang lebih efektif dan efisien serta bertujuan untuk meningkatkan efektivitas pemantauan kesehatan, pencatatan data, dan pengelolaan informasi terkait dengan pertumbuhan anak-anak dan kesehatan ibu hamil melalui pemanfaatan teknologi</h2>
             <div class="row d-flex justify-content-center">
               <div class="col-xl-1">
@@ -108,13 +111,13 @@
             <div class="col-sm text-center">
               <a href="link_ke_halaman_imunisasi_anak">
                 <img src="admin/img/logo anak.png" alt="Employee" class="img-fluid float-left">
-                <h4>Imunisasi Anak</h4>
+                <h4 style="color: #145DA0;">Imunisasi Anak</h4>
               </a>
             </div>
             <div class="col-lg text-center">
               <a href="link_ke_halaman_stunting">
                 <img src="admin/img/logo stunting.png" alt="Security" class="img-fluid float-left">
-                <h4>Stunting Anak</h4>
+                <h4 style="color: #145DA0;">Stunting Anak</h4>
               </a>
             </div>
           </div>
@@ -131,7 +134,7 @@
       <div class="col-lg-5" >
         <h2 style="font-size: 48px;" class="fw-bold" >HINDARI <span class="fw-lighter">STUNTING</span> PADA <span class="fw-bold">ANAK</span></h2>
         <p style="font-size: 18px;">Stunting berpotensi memperlambat perkembangan otak, dengan dampak jangka panjang berupa keterbelakangan mental, rendahnya kemampuan belajar, dan risiko serangan penyakit kronis seperti diabetes, hipertensi, hingga obesitas</p>
-        <a href="halaman_lengkap.html" class="btn btn-danger tombol" style="background-color: #54B4D3; border-color: #54B4D3;">Lengkapnya</a>
+        <a href="halaman_lengkap.html" class="btn btn-danger tombol" style="background-color: #145DA0; border-color: #145DA0;">Lengkapnya</a>
       </div>
     </div>
 
@@ -143,8 +146,8 @@
         <div class="container mt-5">
           <div class="row d-flex justify-content-center ">
             <div class="col">
-              <h1 class="fst-italic text-center"> "Setiap langkah kecil yang kita ambil untuk mendukung kesehatan anak-anak dan ibu hamil adalah investasi besar bagi kesejahteraan masa depan kita."
-              </h1>
+              <h3 class="fst-italic text-center"> "Setiap langkah kecil yang kita ambil untuk mendukung kesehatan anak-anak adalah investasi besar bagi kesejahteraan masa depan bangsa kita."
+              </h3>
             </div>
           </div>
         </div>
@@ -155,7 +158,7 @@
     <!-- akhir container -->
 
     <footer>
-      <div class="mt-5 px-5 pt-5 w-100 d-flex justify-content-center" style="background-color: #54B4D3;">
+      <div class="mt-5 px-5 pt-5 w-100 d-flex justify-content-center" style="background-color: #145DA0;">
         <p style="margin-right: 18em; font-size: 1.2em;" class="text-white">© Copyright 2023 Posicare</p>
         <a href="#" class="fa fa-facebook mx-2 icon-white" style="font-size: 1.5em;"></a>
         <a href="#" class="fa fa-twitter mx-2 icon-white" style="font-size: 1.5em;"></a>

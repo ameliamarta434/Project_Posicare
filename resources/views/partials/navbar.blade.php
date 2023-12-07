@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #145DA0;">
+{{-- <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #145DA0;">
     <div class="container">
       <a class="navbar-brand" href="/">POSICARE</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,4 +34,4 @@
         @endauth
       </div>
     </div>
-  </nav>
+  </nav> --}}
