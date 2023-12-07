@@ -61,7 +61,7 @@
             <div class="inner">
               <h3>1</h3>
 
-              <p>Kader</p>
+              <p>Bidan</p>
             </div>
             <div class="icon">
               <i class="fas fa-stethoscope"></i>

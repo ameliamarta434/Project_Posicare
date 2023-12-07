@@ -18,6 +18,7 @@ use App\Http\Controllers\DashboardBukuTamuController;
 use App\Http\Controllers\DashboardImunisasiController;
 use App\Http\Controllers\DashboardJenisImunisasiController;
 use App\Http\Controllers\DashboardVitaminAController;
+use App\Http\Controllers\BidanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,6 +83,7 @@ Route::resource('/dashboard/vitamin_as', DashboardVitaminAController::class)->ex
 Route::resource('/dashboard/buku_tamus', DashboardBukuTamuController::class)->except('show')->middleware('auth');
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
 Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware('admin');
+Route::resource('/dashboard/bidans', BidanController::class)->except('show')->middleware('auth');
 
 
 
