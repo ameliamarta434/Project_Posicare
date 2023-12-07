@@ -13,17 +13,25 @@ class Anak extends Model
     protected $with = ['ortu'];
     protected $dates = ['tgl_lhr'];
 
-    public function ortu() {
+    public function ortu()
+    {
         return $this->belongsTo(Ortu::class);
     }
-    public function imunisasi() {
+    public function imunisasi()
+    {
         return $this->belongsTo(Imunisasi::class);
     }
-    public function vitamina() {
+    public function vitamina()
+    {
         return $this->belongsTo(VitaminA::class);
     }
+    public function timbang()
+    {
+        return $this->belongsTo(Timbang::class);
+    }
 
-    public function getAgeAttribute() {
+    public function getAgeAttribute()
+    {
         setlocale(LC_TIME, 'id_ID');
         \Carbon\Carbon::setLocale('id');
         \Carbon\Carbon::now()->isoFormat('D MMMM Y');

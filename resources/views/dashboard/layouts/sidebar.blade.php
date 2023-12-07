@@ -1,21 +1,9 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar elevation-4" style="background-color: 	#F0FFFF;">
-    <!-- Brand Logo -->
-    <a href="/dashboard" class="brand-link d-flex ">
-      <img src="/admin/img/Posicare.png" alt="LOGO" height="100">
-    </a>
-
-    <!-- Sidebar -->
-    <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img src="/admin/img/Profil.png" class="img-circle elevation-2" alt="User Image">
-        </div>
-        <div class="info">
-          <a href="#" class="d-block">{{ auth()->user()->name }}</a>
-        </div>
-      </div>
+      <!-- Brand Logo -->
+      <a href="/dashboard" class="brand-link d-flex ">
+          <img src="/admin/img/Posicare.png" alt="LOGO" height="100">
+      </a>
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
@@ -69,13 +57,13 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Timbang Anak
-              </p>
-            </a>
-          </li>
+                      <a href="/dashboard/timbang_anak" class="nav-link {{ Request::is('dashboard/timbang_anak*') ? 'active' : '' }}">
+                          <i class="nav-icon fas fa-tachometer-alt"></i>
+                          <p>
+                              Timbang Anak
+                          </p>
+                      </a>
+                  </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-balance-scale"></i>
