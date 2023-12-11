@@ -37,50 +37,87 @@
                             <h3 class="card-title">Data Timbang Anak</h3>
                         </div>
                         <!-- /.card-header -->
-                        <div class="card-body">
-                            <a href="/dashboard/timbang_anak/create" class="btn btn-primary mb-3"><i class="fas fa-plus-square"></i> Create</a>
-                            <table id="example1" class="table table-bordered table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Nama Anak</th>
-                                        <th>Tinggi Badan</th>
-                                        <th>Berat Badan</th>
-                                        <th>Status Gizi</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($timbangs as $row)
+                        @if (Auth::user()->level == 'admin')
+                            <div class="card-body">
+                                <a href="/dashboard/timbang_anak/create" class="btn btn-primary mb-3"><i class="fas fa-plus-square"></i> Create</a>
+                                <table id="example1" class="table table-bordered table-striped">
+                                    <thead>
                                         <tr>
-                                            <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $row->anak->nama_anak }}</td>
-                                            <td>{{ $row->tb_lhr }}</td>
-                                            <td>{{ $row->bb_lhr }}</td>
-                                            <td>{{ $row->status_gizi }}</td>
-                                            <td>
-                                                <a href="/dashboard/timbang_anak/{{ $row->id }}/edit" class="btn btn-success"><i class="far fa-edit"></i></a>
-                                                <form action="/dashboard/timbang_anak/{{ $row->id }}" method="post" class="d-inline">
-                                                    @method('delete')
-                                                    @csrf
-                                                    <button class="btn btn-danger border-0" onclick="return confirm('Kamu Yakin?')"><i class="far fa-trash-alt"></i></button>
-                                                </form>
-                                            </td>
+                                            <th>#</th>
+                                            <th>Nama Anak</th>
+                                            <th>Tinggi Badan</th>
+                                            <th>Berat Badan</th>
+                                            <th>Status Gizi</th>
+                                            <th>Action</th>
                                         </tr>
-                                    @endforeach
-                                </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Nama Anak</th>
-                                        <th>Tinggi Badan</th>
-                                        <th>Berat Badan</th>
-                                        <th>Status Gizi</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </tfoot>
-                            </table>
-                        </div>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($timbangs as $row)
+                                            <tr>
+                                                <td>{{ $loop->iteration }}</td>
+                                                <td>{{ $row->anak->nama_anak }}</td>
+                                                <td>{{ $row->tb_lhr }}</td>
+                                                <td>{{ $row->bb_lhr }}</td>
+                                                <td>{{ $row->status_gizi }}</td>
+                                                <td>
+                                                    <a href="/dashboard/timbang_anak/{{ $row->id }}/edit" class="btn btn-success"><i class="far fa-edit"></i></a>
+                                                    <form action="/dashboard/timbang_anak/{{ $row->id }}" method="post" class="d-inline">
+                                                        @method('delete')
+                                                        @csrf
+                                                        <button class="btn btn-danger border-0" onclick="return confirm('Kamu Yakin?')"><i class="far fa-trash-alt"></i></button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Nama Anak</th>
+                                            <th>Tinggi Badan</th>
+                                            <th>Berat Badan</th>
+                                            <th>Status Gizi</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        @endif
+                        @if (Auth::user()->level == 'bidan')
+                            <div class="card-body">
+                                <table id="example1" class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Nama Anak</th>
+                                            <th>Tinggi Badan</th>
+                                            <th>Berat Badan</th>
+                                            <th>Status Gizi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($timbangs as $row)
+                                            <tr>
+                                                <td>{{ $loop->iteration }}</td>
+                                                <td>{{ $row->anak->nama_anak }}</td>
+                                                <td>{{ $row->tb_lhr }}</td>
+                                                <td>{{ $row->bb_lhr }}</td>
+                                                <td>{{ $row->status_gizi }}</td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Nama Anak</th>
+                                            <th>Tinggi Badan</th>
+                                            <th>Berat Badan</th>
+                                            <th>Status Gizi</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        @endif
                         <!-- /.card-body -->
                     </div>
                     <!-- /.card -->
