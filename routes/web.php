@@ -70,7 +70,6 @@ Route::middleware('auth')->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'index']);
         Route::resource('/dashboard/ortus', DashboardOrtuController::class)->except('show');
         Route::resource('/dashboard/anaks', DashboardAnakController::class)->except('show');
-        Route::resource('/dashboard/timbang_anak', DashboardTimbangsController::class)->except('show');
         Route::resource('/dashboard/jenis_imunisasis', DashboardJenisImunisasiController::class)->except('show');
         Route::resource('/dashboard/imunisasis', DashboardImunisasiController::class)->except('show');
         Route::resource('/dashboard/vitamin_as', DashboardVitaminAController::class)->except('show');
@@ -79,5 +78,6 @@ Route::middleware('auth')->group(function () {
         Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show');
     });
 
+    Route::resource('/dashboard/timbang_anak', DashboardTimbangsController::class)->except('show');
     Route::resource('/dashboard/bidans', BidanController::class)->except('show');
 });

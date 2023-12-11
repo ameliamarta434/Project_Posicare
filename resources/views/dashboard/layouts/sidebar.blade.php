@@ -1,8 +1,8 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar elevation-4" style="background-color: 	#F0FFFF;">
     <!-- Brand Logo -->
-    <a href="/dashboard" class="brand-link d-flex ">
-        <img src="/admin/img/Posicare.png" alt="LOGO" height="100">
+    <a href="/dashboard" class="brand-link text-start m-0">
+        <img src="/admin/img/Posicare.png" alt="LOGO" width="200">
     </a>
 
     <!-- Sidebar Menu -->
@@ -143,8 +143,17 @@
                 <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
                 <li class="nav-item">
                     <a href="/dashboard/bidans" class="nav-link {{ Request::is('dashboard/bidans*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fas fa-address-book"></i>
                         <p>Data Bidan</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="/dashboard/timbang_anak" class="nav-link {{ Request::is('dashboard/timbang_anak*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Timbang Anak
+                        </p>
                     </a>
                 </li>
             </ul>
