@@ -19,6 +19,7 @@ use App\Http\Controllers\DashboardImunisasiController;
 use App\Http\Controllers\DashboardJenisImunisasiController;
 use App\Http\Controllers\DashboardVitaminAController;
 use App\Http\Controllers\BidanController;
+use GuzzleHttp\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,10 +31,6 @@ use App\Http\Controllers\BidanController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-// Route::get('/', function () {
-//     return 'Halaman Home';
-// });
 
 Route::get('/', function () {
     return view('home', [
@@ -68,41 +65,19 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
-// Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
-// Route::get('/dashboard', function() {
-//     return view('dashboard.index');
-// })->middleware('auth');
+Route::middleware('auth')->group(function () {
+    Route::middleware('user')->group(function () {
+        Route::get('/dashboard', [DashboardController::class, 'index']);
+        Route::resource('/dashboard/ortus', DashboardOrtuController::class)->except('show');
+        Route::resource('/dashboard/anaks', DashboardAnakController::class)->except('show');
+        Route::resource('/dashboard/timbang_anak', DashboardTimbangsController::class)->except('show');
+        Route::resource('/dashboard/jenis_imunisasis', DashboardJenisImunisasiController::class)->except('show');
+        Route::resource('/dashboard/imunisasis', DashboardImunisasiController::class)->except('show');
+        Route::resource('/dashboard/vitamin_as', DashboardVitaminAController::class)->except('show');
+        Route::resource('/dashboard/buku_tamus', DashboardBukuTamuController::class)->except('show');
+        Route::resource('/dashboard/posts', DashboardPostController::class);
+        Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show');
+    });
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
-Route::resource('/dashboard/ortus', DashboardOrtuController::class)->except('show')->middleware('auth');
-Route::resource('/dashboard/anaks', DashboardAnakController::class)->except('show')->middleware('auth');
-Route::resource('/dashboard/timbang_anak', DashboardTimbangsController::class)->except('show')->middleware('auth');
-Route::resource('/dashboard/jenis_imunisasis', DashboardJenisImunisasiController::class)->except('show')->middleware('auth');
-Route::resource('/dashboard/imunisasis', DashboardImunisasiController::class)->except('show')->middleware('auth');
-Route::resource('/dashboard/vitamin_as', DashboardVitaminAController::class)->except('show')->middleware('auth');
-Route::resource('/dashboard/buku_tamus', DashboardBukuTamuController::class)->except('show')->middleware('auth');
-Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
-Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware('admin');
-Route::resource('/dashboard/bidans', BidanController::class)->except('show')->middleware('auth');
-
-
-
-// Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
-
-//Tidak Terpakai Karena Sudah Ada Di Models
-
-// Route::get('/categories/{category:slug}', function (Category $category) {
-//     return view('posts', [
-//         'title' => "Post By Category : $category->name",
-//         'active' => 'categories',
-//         'posts' => $category->posts->load('category', 'author')
-//     ]);
-// });
-
-// Route::get('/author/{author:username}', function (User $author) {
-//     return view('posts', [
-//         'title' => 'Post By Author : $author->name',
-//         'active' => 'posts',
-//         'posts' => $author->posts->load('category', 'author')
-//     ]);
-// });
+    Route::resource('/dashboard/bidans', BidanController::class)->except('show');
+});

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBidansTable extends Migration
+class AddIdAuthTableBidans extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,8 @@ class CreateBidansTable extends Migration
      */
     public function up()
     {
-        Schema::create('bidans', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama_bidan');
-            $table->string('alamat');
-            $table->string('spesialis');
-            $table->string('jd_praktik');
-            $table->timestamps();
+        Schema::table('bidans', function (Blueprint $table) {
+            $table->string('id_auth')->after('id');
         });
     }
 
@@ -30,6 +25,8 @@ class CreateBidansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bidans');
+        Schema::table('bidans', function (Blueprint $table) {
+            //
+        });
     }
 }

@@ -8,19 +8,22 @@ use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         return view('register.index', [
             'title' => 'Register',
             'active' => 'register'
         ]);
     }
 
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
         $validateData = $request->validate([
             'name' => 'required|max:255',
             'username' => ['required', 'min:3', 'max:255', 'unique:users'],
             'email' => 'required|email:dns|unique:users',
-            'password' => 'required|min:5|max:255'
+            'password' => 'required|min:5|max:255',
+            'level' => 'required'
         ]);
 
         // $validateData['password'] = bcrypt($validateData['password']);

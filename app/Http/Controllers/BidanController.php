@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Bidan;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class BidanController extends Controller
 {
@@ -14,9 +16,11 @@ class BidanController extends Controller
      */
     public function index()
     {
-        return view('dashboard.bidans.index', [
-            'bidan' => Bidan::all()
-        ]);
+        $bidan_admin = Bidan::all();
+        $bidan = Bidan::where('id_auth', Auth::user()->id)->get();
+        $cari = Bidan::where('id_auth', Auth::user()->id)->first();
+
+        return view('dashboard.bidans.index', compact('bidan_admin', 'bidan', 'cari'));
     }
 
     /**
@@ -41,10 +45,12 @@ class BidanController extends Controller
     {
         $validatedData = $request->validate([
             'nama_bidan' => 'required|max:255',
+            'id_auth' => 'required',
             'alamat' => 'required|max:255',
             'spesialis' => 'required|max:255',
             'jd_praktik' => 'required|max:255'
         ]);
+
         Bidan::create($validatedData);
 
         return redirect('/dashboard/bidans')->with('success', 'Bidan Successfully Added!');
@@ -72,16 +78,29 @@ class BidanController extends Controller
      */
     public function update(Request $request, Bidan $bidan)
     {
-        $rules = [
+        $request->validate([
             'nama_bidan' => 'required|max:255',
+            'id_auth' => 'required',
             'alamat' => 'required|max:255',
             'spesialis' => 'required|max:255',
             'jd_praktik' => 'required|max:255'
-        ];
+        ]);
 
-        $validatedData = $request->validate($rules);
+        $user = User::where('id', $request->id_auth)->first();
 
-        Bidan::where('id', $bidan->id)->update($validatedData);
+        $user->update([
+            'name' => $request->nama_bidan,
+        ]);
+
+        $bidan  = Bidan::where('id', $bidan->id)->first();
+
+        $bidan->update([
+            'nama_bidan' => $request->nama_bidan,
+            'id_auth' => $request->id_auth,
+            'alamat' => $request->alamat,
+            'spesialis' =>  $request->spesialis,
+            'jd_praktik' => $request->jd_praktik,
+        ]);
 
         return redirect('/dashboard/bidans')->with('success', 'bidan Successfully Updated!');
     }
