@@ -60,11 +60,11 @@
                     <a href="/dashboard/timbang_anak" class="nav-link {{ Request::is('dashboard/timbang_anak*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
-                            Timbang Anak
+                            Status Gizi
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-balance-scale"></i>
                         <p>
@@ -72,7 +72,7 @@
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
-                </li>
+                </li> --}}
                 <li class="nav-item">
                     <a href="/dashboard/imunisasis" class="nav-link {{ Request::is('dashboard/imunisasis*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-syringe"></i>
@@ -89,14 +89,14 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-calendar-alt"></i>
                         <p>
                             Agenda
                         </p>
                     </a>
-                </li>
+                </li> --}}
                 <li class="nav-item">
                     <a href="/dashboard/buku_tamus" class="nav-link {{ Request::is('dashboard/buku_tamus*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-address-book"></i>
@@ -105,7 +105,7 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a href="#" class="nav-link {{ Request::is('dashboard/posts*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-list-ol"></i>
                         <p>
@@ -121,15 +121,15 @@
                             </a>
                         </li>
                     </ul>
-                </li>
-                <li class="nav-item">
+                </li> --}}
+                {{-- <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-print"></i>
                         <p>
                             Laporan
                         </p>
                     </a>
-                </li>
+                </li> --}}
                 {{-- @endcan --}}
             </ul>
         </nav>
@@ -152,7 +152,7 @@
                     <a href="/dashboard/timbang_anak" class="nav-link {{ Request::is('dashboard/timbang_anak*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
-                            Timbang Anak
+                            Status Gizi
                         </p>
                     </a>
                 </li>
@@ -163,3 +163,4 @@
     </div>
     <!-- /.sidebar -->
 </aside>
+
