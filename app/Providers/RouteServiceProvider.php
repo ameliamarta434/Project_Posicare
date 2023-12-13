@@ -61,4 +61,16 @@ class RouteServiceProvider extends ServiceProvider
             return Limit::perMinute(60)->by(optional($request->user())->id ?: $request->ip());
         });
     }
+
+    protected $middlewareGroups = [
+        'web' => [
+            \App\Http\Middleware\Admin::class,
+            \App\Http\Middleware\EncryptCookies::class,
+        ],
+
+        'api' => [
+            'throttle:api',
+            \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        ],
+    ];
 }

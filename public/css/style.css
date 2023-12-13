@@ -1,4 +1,3 @@
-
 .form-signin .form-floating:focus-within {
     z-index: 2;
 }
@@ -18,4 +17,16 @@
 .form-registration input {
     border-radius: 0;
     margin-bottom: -1px;
+}
+
+.sidebar-collapse .nav-sidebar .nav-link p {
+    display: none !important;
+}
+
+.sidebar-collapse .brand-link {
+    display: none !important;
+}
+
+.sidebar-mini.sidebar-collapse .main-sidebar:not(.sidebar-no-expand):hover {
+    width: 74px;
 }
